@@ -1,0 +1,131 @@
+:root {
+    --vibrant-red: #ff3366;
+    --warm-pink: #ff6b9b;
+    --electric-blue: #00b4ff;
+    --deep-indigo: #3a0ca3;
+    --rich-purple: #7209b7;
+    --light-purple: #b5179e;
+    --dark-bg: #1a1a2e;
+    --light-text: #ffffff;
+    --dark-text: #1a1a2e;
+    --gradient-1: linear-gradient(135deg, var(--vibrant-red), var(--deep-indigo));
+    --gradient-2: linear-gradient(135deg, var(--electric-blue), var(--rich-purple));
+    --gradient-3: linear-gradient(45deg, var(--warm-pink), var(--light-purple));
+    --shadow-color: rgba(58, 12, 163, 0.2);
+    --card-bg: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--dark-bg);
+    color: var(--light-text);
+    min-height: 100vh;
+    margin: 0;
+    background-image: 
+        radial-gradient(circle at 10% 20%, var(--vibrant-red) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, var(--electric-blue) 0%, transparent 20%),
+        radial-gradient(circle at 50% 50%, var(--rich-purple) 0%, transparent 30%);
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    box-shadow: 0 8px 32px var(--shadow-color);
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: var(--light-text);
+    padding: 0.8rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--electric-blue);
+    box-shadow: 0 0 0 2px rgba(0, 180, 255, 0.2);
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--gradient-1);
+    color: var(--light-text);
+}
+
+.btn-secondary {
+    background: var(--gradient-2);
+    color: var(--light-text);
+}
+
+.btn-accent {
+    background: var(--gradient-3);
+    color: var(--light-text);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.text-gradient {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.link {
+    color: var(--electric-blue);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.link:hover {
+    color: var(--warm-pink);
+    text-shadow: 0 0 10px rgba(255, 107, 155, 0.5);
+}
+
+/* Animation classes */
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
